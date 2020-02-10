@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Movie" representedClassName=".Movie" syncable="YES">
+        <attribute name="response" optional="YES" attributeType="String"/>
+        <attribute name="totalresults" optional="YES" attributeType="String"/>
+        <relationship name="searchInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Search" inverseName="movieInfo" inverseEntity="Search"/>
+    </entity>
+    <entity name="MovieDetail" representedClassName=".MovieDetail" syncable="YES">
+        <attribute name="actors" optional="YES" attributeType="String"/>
+        <attribute name="awards" optional="YES" attributeType="String"/>
+        <attribute name="boxoffice" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="director" optional="YES" attributeType="String"/>
+        <attribute name="dvd" optional="YES" attributeType="String"/>
+        <attribute name="genre" optional="YES" attributeType="String"/>
+        <attribute name="imdbid" optional="YES" attributeType="String"/>
+        <attribute name="imdbrating" optional="YES" attributeType="String"/>
+        <attribute name="imdbvotes" optional="YES" attributeType="String"/>
+        <attribute name="language" optional="YES" attributeType="String"/>
+        <attribute name="metascore" optional="YES" attributeType="String"/>
+        <attribute name="plot" optional="YES" attributeType="String"/>
+        <attribute name="poster" optional="YES" attributeType="String"/>
+        <attribute name="production" optional="YES" attributeType="String"/>
+        <attribute name="rated" optional="YES" attributeType="String"/>
+        <attribute name="released" optional="YES" attributeType="String"/>
+        <attribute name="response" optional="YES" attributeType="String"/>
+        <attribute name="runtime" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="website" optional="YES" attributeType="String"/>
+        <attribute name="writer" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="String"/>
+        <relationship name="ratingsInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Ratings" inverseName="movieDetailInfo" inverseEntity="Ratings"/>
+    </entity>
+    <entity name="Ratings" representedClassName=".Ratings" syncable="YES">
+        <attribute name="source" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="String"/>
+        <relationship name="movieDetailInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MovieDetail" inverseName="ratingsInfo" inverseEntity="MovieDetail"/>
+    </entity>
+    <entity name="Search" representedClassName=".Search" syncable="YES">
+        <attribute name="imdbid" optional="YES" attributeType="String"/>
+        <attribute name="poster" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <attribute name="year" optional="YES" attributeType="String"/>
+        <relationship name="movieInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Movie" inverseName="searchInfo" inverseEntity="Movie"/>
+    </entity>
+    <elements>
+        <element name="Movie" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="MovieDetail" positionX="-54" positionY="18" width="128" height="418"/>
+        <element name="Ratings" positionX="-18" positionY="162" width="128" height="88"/>
+        <element name="Search" positionX="-36" positionY="153" width="128" height="133"/>
+    </elements>
+</model>
